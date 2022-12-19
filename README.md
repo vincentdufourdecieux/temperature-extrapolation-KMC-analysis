@@ -24,5 +24,5 @@ The code is organized as follows:
     - change MD_analysis_bool (line 12) from 1 to 0 
     - change foldername_reactions (line 35) from [str(temperatures[j]) + 'K_1_120ps/'] to ['3100K_1_120ps/', '3200K_1_120ps/', '3300K_1_120ps/']
     - change foldername_save_KMC (line 37) from str(temperatures[j]) + 'K_1_120ps/KMC/' to 'temp_extrap_to_3400K/KMC/'
-    - Run main.py
-- This is running a temperature extrapolation from the mechanism extracted at 3100, 3200, and 3300K to 3400K. You can also compare the files in data/Results/temp_extrap_to_3400K/, they should be the same as in data/Results_ref_comparison/temp_extrap_to_3400K if you kept the seed 'a = 1' (line 67). This should take less than one minute. 
+    - Run main.py. This should take less than one minute.
+- This is running a temperature extrapolation from the mechanism extracted at 3100, 3200, and 3300K to 3400K. You can compare the files in data/Results/temp_extrap_to_3400K/, they should be the same as in data/Results_ref_comparison/temp_extrap_to_3400K if you kept the seed 'a = 1' (line 67).  
