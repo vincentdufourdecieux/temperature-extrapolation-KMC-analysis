@@ -2,7 +2,7 @@ Code associated with the paper: Dufour-Décieux, V., Ransom, B., Sendek, A. D., 
 
 **Code organization**
 
-The code is rganized as follows:
+The code is organized as follows:
 - folder 'data': 
     - 'MD_data' folder: the '.atom' files of the MD simulation should be added in this folder. There are already 4 files that will be used in the 'First test analyses' section (see below). A '.atom' file is the output type of the file used by LAMMPS (https://docs.lammps.org/dump.html). Examples of these files are provided in data/MD_data. 
     - 'Results' folder: that is where the results of the mechanism extraction or the KMC run will be saved. 
@@ -13,10 +13,11 @@ The code is rganized as follows:
 - 'plot' folder: plot the results
 - 'util' folder: save the data or constant variables definitions
 - main.py: all the information for the analyses will be here. Many variables can be changed here.
+- 'requirements.txt':
 
 
 **First test analyses**
-- Run main.py as it is in this Github repository. This will run a mechanism extraction and one KMC from this mechanism for the 4 '.atom' files that are in data/MD_data. 
+- Run main.py as it is in this Github repository. This will run a mechanism extraction and one KMC from this mechanism for the 4 '.atom' files that are in data/MD_data. This should take several minutes. 
 - Compare the results files with the files in data/Resuts_ref_comparison/. For example, check that data/Results/3100K_1_120ps/Analysis/Reactions.csv gives the same results as data/Results_ref_comparison/3100K_1_120ps/Analysis/Reactions.csv.
 - To run a temperature extrapolation, in main.py, perform the following changes:
     - change temperatures (line 8) to [3400]
@@ -24,4 +25,4 @@ The code is rganized as follows:
     - change foldername_reactions (line 35) to ['3100K_1_120ps/', '3200K_1_120ps/', '3300K_1_120ps/']
     - change foldername_save_KMC (line 37) to 'temp_extrap_to_3400K/KMC/'
     - Run main.py
-- This is running a temperature extrapolation from the mechanism extracted at 3100, 3200, and 3300K to 3400K. You can also compare the files in data/Results/temp_extrap_to_3400K/, they should be the same as in data/Results_ref_comparison/temp_extrap_to_3400K if you kept the seed 'a = 1' (line 67). 
+- This is running a temperature extrapolation from the mechanism extracted at 3100, 3200, and 3300K to 3400K. You can also compare the files in data/Results/temp_extrap_to_3400K/, they should be the same as in data/Results_ref_comparison/temp_extrap_to_3400K if you kept the seed 'a = 1' (line 67). This should take less than one minute. 
