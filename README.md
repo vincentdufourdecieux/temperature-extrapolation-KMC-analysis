@@ -17,7 +17,7 @@ The code is organized as follows:
 
 
 **First test analyses**
-- Run main.py as it is in this Github repository. This will run a mechanism extraction and one KMC from this mechanism for the 4 '.atom' files that are in data/MD_data. This should take several minutes. 
+- Run main.py as it is in this Github repository. This will run a mechanism extraction and one KMC from this mechanism for the 4 '.atom' files that are in data/MD_data. This should take less than 10 minutes. 
 - Compare the results files with the files in data/Resuts_ref_comparison/. For example, check that data/Results/3100K_1_120ps/Analysis/Reactions.csv gives the same results as data/Results_ref_comparison/3100K_1_120ps/Analysis/Reactions.csv.
 - To run a temperature extrapolation, in main.py, perform the following changes:
     - change temperatures (line 8) from [3100, 3200, 3300, 3400] to [3400]
