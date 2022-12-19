@@ -1,6 +1,7 @@
 Code associated with the paper: Dufour-Décieux, V., Ransom, B., Sendek, A. D., Freitas, R., Blanchet, J., & Reed, E. J. (2022). Temperature Extrapolation of Molecular Dynamics Simulations of Complex Chemistry to Microsecond Timescales Using Kinetic Models: Applications to Hydrocarbon Pyrolysis. Journal of Chemical Theory and Computation (https://pubs.acs.org/doi/full/10.1021/acs.jctc.2c00623).
 
 **Code organization**
+
 The code is rganized as follows:
 - folder 'data': 
     - 'MD_data' folder: the '.atom' files of the MD simulation should be added in this folder. There are already 4 files that will be used in the 'First test analyses' section (see below). A '.atom' file is the output type of the file used by LAMMPS (https://docs.lammps.org/dump.html). Examples of these files are provided in data/MD_data. 
