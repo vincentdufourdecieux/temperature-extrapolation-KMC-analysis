@@ -5,11 +5,11 @@ from MD_analysis import run_analysis
 from plot import plot_results
 
 
-temperatures = [3400]
+temperatures =  [3400, 3600, 4000, 4500]
 
 for j in range(len(temperatures)):
         # MD analysis info
-        MD_analysis_bool = 0 # 1 if mechanism needs to be extracted from MD, 0 otherwise  
+        MD_analysis_bool = 1 # 1 if mechanism needs to be extracted from MD, 0 otherwise  
         atom_file = 'C4H10_896at_1_'+ str(temperatures[j]) + 'K_40GPa_50kts_0.12ts_every100_ffield.reax.cho.2017.atom' # Name of the MD file, must be in the '.atom' format and in the folder 'data/MD_data'
         folder_name_save = str(temperatures[j]) + 'K_1_6ps/' # Name of the folder in which analysis will be saved. It will be in the 'data/Results/(folder_name_save)' folder
         atom_features = np.array([1, 1]) # Boolean for features to describe atoms. The first is for atom type, the second is for the type of neighbors.
@@ -32,9 +32,9 @@ for j in range(len(temperatures)):
         # KMC run info
         KMC_bool = 1 # 1 if KMC needs to be run, 0 otherwise
         num_of_KMC = 1 # Number of KMC runs
-        foldername_reactions = ['3600K_1_6ps/', '4000K_1_6ps/', '4500K_1_6ps/'] # Folder to use for the mechanism, if you want to do temperature extrapolation, you need to put several folders
+        foldername_reactions =  [str(temperatures[j]) + 'K_1_6ps/'] # Folder to use for the mechanism, if you want to do temperature extrapolation, you need to put several folders
         foldername_starting_molecules = str(temperatures[j]) + 'K_1_6ps/' # Folder to use for the system to study
-        foldername_save_KMC = 'temp_extrap_to_3400K/KMC/' # Folder where to save the KMC
+        foldername_save_KMC = str(temperatures[j]) + 'K_1_6ps/KMC/' # Folder where to save the KMC
         molecules_to_track_KMC = 'all' # Same description as molecules_to_track
         track_extra_variables_KMC = np.array([1, 1]) # Same description as track_extra_variables
         reproduce_MD = 1 # If 1 the next variables of the KMC run info will be ignored and will be extracted from folder_starting_molecules
